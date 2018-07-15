@@ -8,6 +8,7 @@
  * @copyright Copyright (c) 2017 Jerry Padgett <sjpadgett@gmail.com>
  * @license https://www.gnu.org/licenses/agpl-3.0.en.html GNU Affero General Public License 3
  */
+use OpenEMR\Core\Header;
 /* $isAuthorized tells us if the form is for user UI or claim processing and provides another security check */
 if ($isAuthorized !== true) {
     require_once("./ub04_dispose.php");
@@ -34,16 +35,12 @@ if ($isAuthorized !== true) {
 <head>
 <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
 <meta charset="utf-8" />
-<?php if ($isAuthorized !== true) {?>
-<script type="text/javascript" src="<?php echo $GLOBALS['assets_static_relative']; ?>/jquery-min-3-1-1/index.js"></script>
- <link rel="stylesheet" href="<?php echo $GLOBALS['assets_static_relative']; ?>/bootstrap-3-3-4/dist/css/bootstrap.min.css">
- <link href="<?php echo $GLOBALS['assets_static_relative']; ?>/jquery-ui-1-12-1/themes/base/jquery-ui.min.css" rel="stylesheet" type="text/css" />
-<link rel="stylesheet" href="<?php echo $GLOBALS['assets_static_relative']; ?>/jquery-datetimepicker-2-5-4/build/jquery.datetimepicker.min.css">
-<script src="<?php echo $GLOBALS['assets_static_relative']; ?>/bootstrap-3-3-4/dist/js/bootstrap.min.js" type="text/javascript"></script>
-<script type="text/javascript" src="<?php echo $GLOBALS['assets_static_relative']; ?>/emodal-1-2-65/dist/eModal.js"></script>
-<script type="text/javascript" src="<?php echo $GLOBALS['assets_static_relative']; ?>/jquery-datetimepicker-2-5-4/build/jquery.datetimepicker.full.min.js"></script>
-<script type="text/javascript" src="<?php echo $GLOBALS['assets_static_relative'] ?>/jquery-ui-1-12-1/jquery-ui.min.js"></script>
-
+<?php if ($isAuthorized !== true) {
+Header::setupHeader([
+    'jquery-ui',
+    'datetime-picker',
+    'emodal'
+]); ?>
 <script type="text/javascript">
 $( document ).ready(function() {
     $( "[title*='DATE']" ).datetimepicker({

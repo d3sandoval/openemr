@@ -20,6 +20,21 @@ assets:
     angular-summernote:
         basePath: %assets_static_relative%/angular-summernote/dist/
         script: angular-summernote.js # should this be the minified file?
+    anythingslider:
+        basePath: %assets_static_relative%/anythingslider/
+        script: js/jquery.anythingslider.fx.js # should optional plugins be their own key?
+        script: js/jquery.anythingslider.video.js # should optional plugins be their own key?
+        script: js/jquery.easing.1.2.js # should optional extensions be their own key?
+        script: js/jquery.anythingslider.min.js
+        # link: css/anythingslider.css
+        link: css/theme-metallic.css
+        link: css/theme-minimalist-round.css
+        link: css/theme-minimalist-square.css
+        link: css/theme-construction.css
+        link: css/theme-cs-portfolio.css
+    backbone:
+        basePath: %assets_static_relative%/backbone/
+        script: backbone-min.js
     bootstrap:
         basePath: %assets_static_relative%/bootstrap/dist/
         script: js/bootstrap.min.js
@@ -69,27 +84,36 @@ assets:
         script: jquery.min.js
         autoload: true
         allowNoLoad: true
+    jquery-1-10-2:
+        basePath: %assets_static_relative%/jquery-1-10-2/
+        script: jquery.min.js
     jquery-1-11-3:
-        basePath: %assets_static_relative%/jquery-1-11-3/dist
+        basePath: %assets_static_relative%/jquery-1-11-3/dist/
         script: jquery.min.js
     jquery-ui:
         basePath: %assets_static_relative%/jquery-ui/
         script: jquery-ui.min.js
     jquery-ui-base:
-        basePath: %assets_static_relative%/jquery-ui-themes-1-12-1/themes/base/
+        basePath: %assets_static_relative%/jquery-ui-themes/themes/base/
         link: jquery-ui.min.css
     jquery-ui-darkness:
-        basePath: %assets_static_relative%/jquery-ui-themes-1-12-1/themes/ui-darkness/
+        basePath: %assets_static_relative%/jquery-ui-themes/themes/ui-darkness/
         link: jquery-ui.min.css
     jquery-ui-sunny:
-        basePath: %assets_static_relative%/jquery-ui-themes-1-12-1/themes/sunny/
+        basePath: %assets_static_relative%/jquery-ui-themes/themes/sunny/
         link: jquery-ui.min.css
     jquery-ui-redmond:
-        basePath: %assets_static_relative%/jquery-ui-themes-1-12-1/themes/redmond/
+        basePath: %assets_static_relative%/jquery-ui-themes/themes/redmond/
         link: jquery-ui.min.css
     jquery-ui-cupertino:
-        basePath: %assets_static_relative%/jquery-ui-themes-1-12-1/themes/cupertino/
+        basePath: %assets_static_relative%/jquery-ui-themes/themes/cupertino/
         link: jquery-ui.min.css
+    jquery-ui-lightness-1-10-4:
+        basePath: %assets_static_relative%/jquery-ui-themes-1-10-4/themes/ui-lightness/
+        link: jquery-ui.min.css
+    jquery-ui-excite-bike-1-11-4:
+        basePath: %assets_static_relative%/jquery-ui-themes-1-11-4/themes/excite-bike/
+        link: jquery-ui.css # should this be the minified file?
     jscolor:
         basePath: %assets_static_relative%/jscolor/
         script: jscolor.js
@@ -134,6 +158,9 @@ assets:
         link:
             - select2/dist/css/select2.css # should this be the minified file?
             - select2-bootstrap-theme/dist/select2-bootstrap.css # should this be the minified file?
+    shortcut:
+        basePath: %assets_static_relative%/manual-added-package/shortcut.js-2-01-B/
+        script: shortcut.js
     tabs-theme:
         basePath: %webroot%/interface/themes/
         link: %theme_tabs_layout%
@@ -148,3 +175,6 @@ assets:
     topdialog:
         basePath: %webroot%/library/
         script: topdialog.js
+    underscore:
+        basePath: %assets_static_relative%/underscore
+        script: underscore-min.js

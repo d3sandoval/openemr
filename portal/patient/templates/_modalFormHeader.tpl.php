@@ -39,7 +39,7 @@ use OpenEMR\Core\Header;
     'datetime-picker',
     'underscore',
     'backbone'
-]) ?>
+]); ?>
 
 <link href="<?php echo $GLOBALS['web_root']; ?>/portal/patient/styles/style.css?v=<?php echo $GLOBALS['v_js_includes']; ?>" rel="stylesheet" />
 <script type="text/javascript" src="<?php echo $GLOBALS['web_root']; ?>/portal/patient/scripts/app.js?v=<?php echo $GLOBALS['v_js_includes']; ?>"></script>

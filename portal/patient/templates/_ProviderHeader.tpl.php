@@ -40,7 +40,7 @@ use OpenEMR\Core\Header;
             'datetime-picker',
             'underscore',
             'backbone'
-        ]) ?>
+        ]); ?>
 
         <!-- Styles -->
 

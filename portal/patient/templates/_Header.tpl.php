@@ -41,7 +41,7 @@ use OpenEMR\Core\Header;
             'datetime-picker',
             'underscore',
             'backbone'
-        ]) ?>
+        ]); ?>
         <!-- Styles -->
 
         <link href="styles/style.css?v=<?php echo $GLOBALS['v_js_includes']; ?>" rel="stylesheet" />

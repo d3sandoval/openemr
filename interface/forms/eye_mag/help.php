@@ -25,12 +25,12 @@
  * @link http://www.open-emr.org
  */
 
-
-
 include_once("../../globals.php");
 include_once("$srcdir/acl.inc");
 include_once("$srcdir/lists.inc");
 include_once("$srcdir/api.inc");
+
+use OpenEMR\Core\Header;
 
 $form_folder = "eye_mag";
 $showit    = $_REQUEST['zone'];
@@ -44,12 +44,7 @@ if ($showit=='ext') {
 ?>
 <html>
     <head>
-    <link rel="stylesheet" href="<?php echo $GLOBALS['assets_static_relative'] ?>/bootstrap-3-3-4/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?php echo $GLOBALS['css_header']; ?>" type="text/css">
-    <link rel="stylesheet" href="<?php echo $GLOBALS['assets_static_relative'] ?>/jquery-ui-1-10-4/themes/ui-lightness/jquery-ui.min.css">
-    <link rel="stylesheet" href="<?php echo $GLOBALS['assets_static_relative'] ?>/pure-0-5-0/pure-min.css">
-    <link rel="stylesheet" href="<?php echo $GLOBALS['assets_static_relative'] ?>/qtip2-2-2-1/jquery.qtip.min.css" />
-    <link rel="stylesheet" href="<?php echo $GLOBALS['assets_static_relative'] ?>/font-awesome-4-6-3/css/font-awesome.min.css">
     <link rel="stylesheet" href="../../forms/<?php echo $form_folder; ?>/css/style.css" type="text/css">
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -57,12 +52,15 @@ if ($showit=='ext') {
     <meta name="description" content="Eye Exam Help">
     <meta name="author" content="openEMR: ophthalmology help">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- jQuery library -->
-    <script src="<?php echo $GLOBALS['assets_static_relative'] ?>/jquery-min-1-10-2/index.js"></script>
-    <script src="<?php echo $GLOBALS['assets_static_relative'] ?>/jquery-ui-1-11-4/jquery-ui.js"></script>
-    <link rel="stylesheet" href="<?php echo $GLOBALS['assets_static_relative'] ?>/jquery-ui-1-11-4/themes/excite-bike/jquery-ui.css">
-    <!-- Latest compiled JavaScript -->
-    <script src="<?php echo $GLOBALS['assets_static_relative'] ?>/bootstrap-3-3-4/dist/js/bootstrap.min.js"></script>
+    <?php Header::setupHeader([
+        'no_jquery',
+        'jquery-1-10-2',
+        'jquery-ui-1-11-4',
+        'jquery-ui-lightness-1-10-4',
+        'jquery-ui-excite-bike-1-11-4',
+        'pure',
+        'qtip2-2-2-1',
+    ]); ?>
     <script>
      $(function() {
         $("[id^='accordion_']" ).accordion({

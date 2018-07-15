@@ -58,7 +58,7 @@ if (!$docid) {
     'datetime-picker',
     'underscore',
     'backbone'
-]) ?>
+]); ?>
 
         <link href="<?php echo $GLOBALS['web_root']; ?>/portal/assets/css/style.css?v=<?php echo $GLOBALS['v_js_includes']; ?>" rel="stylesheet" />
         <link href="<?php echo $GLOBALS['web_root']; ?>/portal/sign/css/signer.css?v=<?php echo $GLOBALS['v_js_includes']; ?>" rel="stylesheet" type="text/css" />

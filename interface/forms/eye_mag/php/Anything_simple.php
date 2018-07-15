@@ -31,6 +31,8 @@
     include_once("$srcdir/api.inc");
     require_once("$srcdir/forms.inc");
 
+    use OpenEMR\Core\Header;
+
     $form_name = "Eye Form";
     $form_folder = "eye_mag";
     include_once($GLOBALS['webserver_root']."/interface/forms/".$form_folder."/php/".$form_folder."_functions.php");
@@ -69,30 +71,20 @@
         <meta charset="utf-8" />
 
         <title><?php echo xlt('Document Library'); ?></title>
-        <link rel="shortcut icon" href="<?php echo $GLOBALS['assets_static_relative'] ?>/AnythingSlider-1-9-4/demos/images/favicon.ico" type="image/x-icon">
-        <link rel="apple-touch-icon" href="<?php echo $GLOBALS['assets_static_relative'] ?>/AnythingSlider-1-9-4/demos/images/apple-touch-icon.png">
-
-        <script src="<?php echo $GLOBALS['assets_static_relative'] ?>/jquery-min-1-10-2/index.js"></script>
-        <script src="<?php echo $GLOBALS['assets_static_relative'] ?>/bootstrap-3-3-4/dist/js/bootstrap.min.js"></script>
-        <script src="<?php echo $GLOBALS['assets_static_relative'] ?>/jquery-ui-1-11-4/jquery-ui.min.js"></script>
-        <link rel="stylesheet" href="<?php echo $GLOBALS['assets_static_relative'] ?>/AnythingSlider-1-9-4/css/anythingslider.css">
-        <!-- AnythingSlider optional extensions -->
-        <script src="<?php echo $GLOBALS['assets_static_relative'] ?>/AnythingSlider-1-9-4/js/jquery.anythingslider.fx.js"></script>
-        <script src="<?php echo $GLOBALS['assets_static_relative'] ?>/AnythingSlider-1-9-4/js/jquery.anythingslider.video.js"></script>
-        <!-- Anything Slider optional plugins -->
-         <script src="<?php echo $GLOBALS['assets_static_relative'] ?>/AnythingSlider-1-9-4/js/jquery.easing.1.2.js"></script>
-        <!-- Anything Slider -->
-        <script src="<?php echo $GLOBALS['assets_static_relative'] ?>/AnythingSlider-1-9-4/js/jquery.anythingslider.min.js"></script>
-
-        <link rel="stylesheet" href="<?php echo $GLOBALS['assets_static_relative'] ?>/AnythingSlider-1-9-4/css/theme-metallic.css">
-        <link rel="stylesheet" href="<?php echo $GLOBALS['assets_static_relative'] ?>/AnythingSlider-1-9-4/css/theme-minimalist-round.css">
-        <link rel="stylesheet" href="<?php echo $GLOBALS['assets_static_relative'] ?>/AnythingSlider-1-9-4/css/theme-minimalist-square.css">
-        <link rel="stylesheet" href="<?php echo $GLOBALS['assets_static_relative'] ?>/AnythingSlider-1-9-4/css/theme-construction.css">
-        <link rel="stylesheet" href="<?php echo $GLOBALS['assets_static_relative'] ?>/AnythingSlider-1-9-4/css/theme-cs-portfolio.css">
-
+        <?php Header::setupHeader([
+            'no_jquery',
+            'jquery-1-10-2',
+            'jquery-ui-1-11-4',
+            'anythingslider',
+            'jquery-ui-excite-bike-1-11-4',
+            'pure',
+            'qtip-2-2-2-1',
+        ]); ?>
+        <link rel="shortcut icon" href="<?php echo $GLOBALS['assets_static_relative'] ?>/anythingslider/demos/images/favicon.ico" type="image/x-icon">
+        <link rel="apple-touch-icon" href="<?php echo $GLOBALS['assets_static_relative'] ?>/anythingslider/demos/images/apple-touch-icon.png">
         <!-- ColorBox -->
-        <link href="<?php echo $GLOBALS['assets_static_relative'] ?>/AnythingSlider-1-9-4/demos/colorbox/colorbox.css" rel="stylesheet">
-        <script src="<?php echo $GLOBALS['assets_static_relative'] ?>/AnythingSlider-1-9-4/demos/colorbox/jquery.colorbox-min.js"></script>
+        <link href="<?php echo $GLOBALS['assets_static_relative'] ?>/anythingslider/demos/colorbox/colorbox.css" rel="stylesheet">
+        <script src="<?php echo $GLOBALS['assets_static_relative'] ?>/anythingslider/demos/colorbox/jquery.colorbox-min.js"></script>
         <script type="text/javascript" src="<?php echo $webroot ?>/interface/main/tabs/js/include_opener.js"></script>
         <style>
              #slider { width: 700px; height: 390px; }
@@ -229,14 +221,9 @@
         </script>
 
         <!-- Add Font stuff for the look and feel.  -->
-        <link rel="stylesheet" href="<?php echo $GLOBALS['assets_static_relative'] ?>/bootstrap-3-3-4/dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="<?php echo $GLOBALS['css_header']; ?>" type="text/css">
-        <link rel="stylesheet" href="<?php echo $GLOBALS['assets_static_relative'] ?>/jquery-ui-1-11-4/themes/excite-bike/jquery-ui.css">
-        <link rel="stylesheet" href="<?php echo $GLOBALS['assets_static_relative'] ?>/pure-0-5-0/pure-min.css">
-        <link rel="stylesheet" href="<?php echo $GLOBALS['assets_static_relative'] ?>/qtip2-2-2-1/jquery.qtip.min.css" />
-        <link rel="stylesheet" href="<?php echo $GLOBALS['assets_static_relative'] ?>/font-awesome-4-6-3/css/font-awesome.min.css">
         <link rel="stylesheet" href="<?php echo $GLOBALS['webroot']; ?>/interface/forms/<?php echo $form_folder; ?>/css/style.css" type="text/css">
-
+        
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
