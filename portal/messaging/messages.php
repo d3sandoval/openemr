@@ -48,6 +48,8 @@ require_once("$srcdir/options.inc.php");
 require_once("$srcdir/classes/Document.class.php");
 require_once("./../lib/portal_mail.inc");
 
+use OpenEMR\Core\Header;
+
 $docid = empty($_REQUEST['docid']) ? 0 : intval($_REQUEST['docid']);
 $orderid = empty($_REQUEST['orderid']) ? 0 : intval($_REQUEST['orderid']);
 
@@ -100,34 +102,15 @@ function getAuthPortalUsers()
 <meta name="viewport"
     content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="Mail Application" />
-<link
-    href="<?php echo $GLOBALS['assets_static_relative']; ?>/font-awesome-4-6-3/css/font-awesome.min.css"
-    type="text/css" rel="stylesheet">
-<link
-    href="<?php echo $GLOBALS['assets_static_relative']; ?>/bootstrap-3-3-4/dist/css/bootstrap.min.css"
-    rel="stylesheet" type="text/css" />
-<?php if ($_SESSION['language_direction'] == 'rtl') { ?>
-    <link
-    href="<?php echo $GLOBALS['assets_static_relative']; ?>/bootstrap-rtl-3-3-4/dist/css/bootstrap-rtl.min.css"
-    rel="stylesheet" type="text/css" />
-<?php } ?>
-<script type='text/javascript'
-    src="<?php echo $GLOBALS['assets_static_relative']; ?>/jquery-min-1-11-3/index.js"></script>
-<script type='text/javascript'
-    src="<?php echo $GLOBALS['assets_static_relative']; ?>/bootstrap-3-3-4/dist/js/bootstrap.min.js"></script>
-<link rel="stylesheet"
-    href="<?php echo $GLOBALS['assets_static_relative']; ?>/summernote-0-8-2/dist/summernote.css" />
-<script type='text/javascript'
-    src="<?php echo $GLOBALS['assets_static_relative']; ?>/summernote-0-8-2/dist/summernote.js"></script>
-<script type='text/javascript'
-    src="<?php echo $GLOBALS['assets_static_relative']; ?>/angular-1-5-8/angular.min.js"></script>
-<script type='text/javascript'
-    src="<?php echo $GLOBALS['assets_static_relative']; ?>/angular-summernote-0-8-1/dist/angular-summernote.js"></script>
-<script type='text/javascript'
-    src="<?php echo $GLOBALS['assets_static_relative']; ?>/angular-sanitize-1-5-8/angular-sanitize.min.js"></script>
-<script
-    src='<?php echo $GLOBALS['assets_static_relative']; ?>/checklist-model-0-10-0/checklist-model.js'></script>
-
+<?php Header::setupHeader([
+    'no_jquery',
+    'jquery-1-11-3',
+    'summernote',
+    'angular',
+    'angular-summernote',
+    'angular-sanitize',
+    'checklist-model'
+    ]); ?>
 </head>
 <body class="skin-blue">
     <!-- style='background:#f1f2f7;' -->
