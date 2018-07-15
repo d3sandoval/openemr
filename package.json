@@ -105,7 +105,6 @@
     "jquery-validation": "https://github.com/jquery-validation/jquery-validation/releases/download/1.13.1/jquery-validation-1.13.1.zip",
     "jscolor-1-4-5": "https://github.com/EastDesire/jscolor/archive/v1.4.5.tar.gz",
     "pure": "https://github.com/pure-css/pure/releases/download/v0.5.0/pure-0.5.0.tar.gz",
-    "qtip2-2-2-0": "https://registry.npmjs.org/qtip2/-/qtip2-2.2.0.tgz",
     "react-15-1-0": "https://github.com/facebook/react/releases/download/v15.1.0/react-15.1.0.zip"
   }
 }
