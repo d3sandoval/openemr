@@ -3,6 +3,7 @@
 .env
 /.idea/*
 node_modules
+/public/themes/*
 /public/assets/*
 !/public/assets/manual-added-packages
 !/public/assets/modified
